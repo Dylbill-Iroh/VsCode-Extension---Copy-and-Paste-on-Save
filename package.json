@@ -1,0 +1,61 @@
+{
+  "name": "copy-and-paste-on-save",
+  "displayName": "Copy and Paste on Save",
+  "description": "Simple extension to copy and paste current file to one or more locations when saving.",
+  "version": "0.0.1",
+  "publisher": "Dylbill",
+  "license": "MIT",
+  "icon": "images/icon.png",
+	"keywords": [
+		"Copy",
+		"Paste",
+    "Save",
+    "On Save"
+	],
+  "engines": {
+    "vscode": "^1.81.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "copy-and-paste-on-save.setFoldersForCurrentFile",
+        "title": "Copy Paste On Save - Set folder(s) for current file."
+      },
+      {
+        "command": "copy-and-paste-on-save.copyFoldersFromCurrentFile",
+        "title": "Copy Paste On Save - Copy Folder(s) From Current File"
+      },
+      {
+        "command": "copy-and-paste-on-save.pasteFoldersToCurrentFile",
+        "title": "Copy Paste On Save - Paste Folder(s) To Current File"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.81.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@typescript-eslint/eslint-plugin": "^6.4.1",
+    "@typescript-eslint/parser": "^6.4.1",
+    "eslint": "^8.47.0",
+    "glob": "^10.3.3",
+    "mocha": "^10.2.0",
+    "typescript": "^5.1.6",
+    "@vscode/test-electron": "^2.3.4"
+  }
+}
